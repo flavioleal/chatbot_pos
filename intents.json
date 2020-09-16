@@ -1,0 +1,145 @@
+{
+  "intents": [
+    {
+      "tag": "cumprimento",
+      "patterns": [
+        "Olá",
+		"Ola",
+        "Ei",
+        "Oi",
+        "Bom dia",
+        "Boa noite"
+      ],
+      "responses": [
+        "Olá, bem-vindo ao nosso Chatbot",
+        "Bom ver você, bem-vindo ao nosso chatbot",
+        "Olá, como posso ajudar?"
+      ],
+      "context": [
+        ""
+      ]
+    },
+    {
+      "tag": "adeus",
+      "patterns": [
+        "Tchau",
+        "Até logo",
+        "Bom bate-papo com você, tchau",
+        "Até a próxima"
+      ],
+      "responses": [
+        "Até logo!",
+        "Tenha um bom dia",
+        "Tchau! Volte logo.",
+        "Feliz por ajudar"
+      ],
+      "context": [
+        ""
+      ]
+    },
+	{
+      "tag": "obrigado",
+      "patterns": [
+        "Obrigado",
+        "Isso ajuda",
+        "Demais obrigado",
+        "Obrigado por me ajudar"
+      ],
+      "responses": [
+        "Feliz por ajudar! ",
+        "A qualquer momento! Posso ajudar em algum outro problema?",
+        "O prazer é meu! Posso ajudar com algum outro problema?"
+      ],
+      "context": [
+        ""
+      ]
+    },
+	{
+      "tag": "valor do IPVA",
+      "patterns": [
+        "Qual o valor do IPVA?"
+      ],
+      "responses": [
+        "Os valores separados do IPVA, da Taxa de Licenciamento Anual e do seguro obrigatório podem ser obtidos nesta página da Internet (www.receita.fazenda.df.gov.br) em: Menu Receita / Serviços Cidadão / Veículos, mediante o fornecimento do nº do RENAVAM ou por meio do telefone “156”, opção “3”, ou em uma das unidades do “Na Hora”, ou em uma das Agências/Posto de Atendimento da Receita, mediante o fornecimento do nº da placa e do RENAVAM."
+      ],
+      "context": [
+        "ipva"
+      ]
+    },
+	{
+      "tag": "valores pagos e a pagar do IPVA",
+      "patterns": [
+        "Como pagar o IPVA dos exercícios anteriores?"
+      ],
+      "responses": [
+        "Os valores pagos e a pagar podem ser obtidos nesta página da Internet (www.receita.fazenda.df.gov.br) em: Menu Receita / Serviços Cidadão / Veículos, ou por meio do telefone “156”, opção “3”, mediante o fornecimento do nº da placa e do RENAVAM, ou em uma das Agências/Posto de Atendimento da Receita, por meio da indicação do RENAVAM ou documentos que comprovem ser o proprietário do veículo ou procurador deste (CRLV, documento de identidade, CPF e procuração, se for o caso)."
+      ],
+      "context": [
+        "ipva"
+      ]
+    },
+	{
+      "tag": "pagamento IPVA",
+      "patterns": [
+        "Como pagar o IPVA?",
+		"Como realizar o pagamento do IPVA"
+      ],
+      "responses": [
+        "O pagamento pode ser realizado pela Internet, de qualquer lugar do Brasil ou do mundo, por meio da página do banco conveniado em que o contribuinte tenha conta, nas casas lotéricas, nas unidades de auto-atendimento das agências bancárias ou diretamente nas agências bancárias conveniadas."
+      ],
+      "context": [
+        "ipva"
+      ]
+    },
+	{
+      "tag": "parcelar IPVA",
+      "patterns": [
+        "posso parcelar o ipva?"
+      ],
+      "responses": [
+        "O pagamento do IPVA do exercício corrente pode ser efetuado em cota única ou em até 3 cotas, com parcelas mínimas de R$ 50,00 (cinquenta reais), conforme §1º, art. 1º da Portaria SEF/ nº 374/2019."
+      ],
+      "context": [
+        "ipva"
+      ]
+    },
+	{
+      "tag": "IPVA",
+      "patterns": [
+        "Quem tem direito a não pagar o IPVA?",
+		"Quem tem insenção do IPVA?"
+      ],
+      "responses": [
+        "Há algumas previsões na Constituição Federal e em leis distritais da não-incidência ou da dispensa do pagamento do IPVA. As previsões constantes na Constituição Federal são denominadas de imunidades tributárias e as estabelecidas em lei, de isenções ou de não-incidência legalmente qualificada. "
+      ],
+      "context": [
+        "ipva"
+      ]
+    },
+	{
+      "tag": "IPVA",
+      "patterns": [
+        "Como é calculado o valor do IPVA?"
+      ],
+      "responses": [
+        "O valor do IPVA é calculado aplicando sobre a base cálculo (o valor venal) a alíquota estabelecida para cada tipo de veículo, conforme a norma constante no art. 10 º do Dec. 34.024/2012. \nPor exemplo: veículo de passeio, cujo valor de mercado seja R$ 20.000,00. \nAlíquota para automóvel de passeio – 3% \n IPVA = R$ 20.000,00 x 3% = R$ 600,00 (cota única) ou em 3 cotas de R$ 200,00."
+      ],
+      "context": [
+        "ipva"
+      ]
+    },
+	{
+      "tag": "IPVA",
+      "patterns": [
+        "Qual a multa e atualização para pagamento em atraso do IPVA?",
+		"Qual é a multa por atrasar o IPVA"
+      ],
+      "responses": [
+        "Depende do tempo em atraso. Para pagamentos no mesmo exercício"
+      ],
+      "context": [
+        "ipva"
+      ]
+    }
+  ]
+}

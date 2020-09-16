@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<body>
+
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/static/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container bootstrap snippets bootdey">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="portlet portlet-default">
+                        <div class="portlet-heading">
+                            <div class="portlet-title">
+                                <h4><i class="fa fa-circle text-green"></i>Atendimento virtual</h4>
+                            </div>
+                            <div class="portlet-widgets">
+                                <span class="divider"></span>
+                                <a data-toggle="collapse" data-parent="#accordion" href="#chat"><i
+                                        class="fa fa-chevron-down"></i></a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div id="chat" class="panel-collapse collapse in">
+                            <div>
+                                <div id="chatbox" class="portlet-body chat-widget"
+                                    style="overflow-y: auto; width: auto; height: 300px;">
+                                </div>
+                            </div>
+                            <div class="portlet-footer">
+                                <form role="form" id="userInput">
+                                    <div class="form-group">
+                                        <textarea id="textInput" class="form-control"
+                                            placeholder="Digite sua mensagem..."></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <button id="buttonInput" type="button"
+                                            class="btn btn-default pull-right">Enviar</button>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </form>
+                                <script>
+                                    function getBotResponse() {
+                                        var rawText = $("#textInput").val();
+                                        if(rawText == '' || rawText == undefined) return;
+
+                                        var userHtml = ' <div class="row" id="inputChat">'
+                                            + '<div class="col-lg-12">'
+                                            + '   <div class="media">'
+                                            + ' <a class="pull-left" href="#"><img class="media-object img-circle img-chat" src="/static/avatar_user.png" alt=""></a>'
+                                            + '  <div class="media-body">'
+                                            + '        <h4 class="media-heading">Você</h4>'
+                                            + '      <p>' + rawText + '</p>'
+                                            + '      </div>'
+                                            + '     </div>'
+                                            + ' </div>'
+                                            + '</div>'
+                                            + '<hr>';
+                                        $("#textInput").val("");
+                                        $("#chatbox").append(userHtml);
+                                        var objDiv = document.getElementById('chatbox');
+                                            objDiv.scrollTop = objDiv.scrollHeight;
+                                         
+                                        $.get("/get", { msg: rawText }).done(function (data) {
+                                            var botHtml = ' <div class="row">'
+                                                + '<div class="col-lg-12">'
+                                                + '   <div class="media">'
+                                                + ' <a class="pull-left" href="#"><img class="media-object img-circle img-chat" src="/static/avatar_bot.png" alt=""></a>'
+                                                + '  <div class="media-body">'
+                                                + '        <h4 class="media-heading">Atendente</h4>'
+                                                + '      <p>' + data + '</p>'
+                                                + '      </div>'
+                                                + '     </div>'
+                                                + ' </div>'
+                                                + '</div>'
+                                                + '<hr>';
+
+
+
+                                            $("#chatbox").append(botHtml);
+                                            objDiv.scrollTop = objDiv.scrollHeight;
+                                        });
+                                    }
+                                    $("#textInput").keypress(function (e) {
+                                        if (e.which == 13) {
+                                            getBotResponse();
+                                        }
+                                    });
+                                    $("#buttonInput").click(function () {
+                                        getBotResponse();
+                                    })
+                                </script>
+                                <script
+                                    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-md-4 -->
+            </div>
+        </div>
+    </body>
+
+    </html>
